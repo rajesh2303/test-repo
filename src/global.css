@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Sansation Regular V2";
+    src: url("https://db.onlinewebfonts.com/t/00370d92f1b404768d34ac7dc664289e.eot");
+    src: url("https://db.onlinewebfonts.com/t/00370d92f1b404768d34ac7dc664289e.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/00370d92f1b404768d34ac7dc664289e.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/00370d92f1b404768d34ac7dc664289e.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/00370d92f1b404768d34ac7dc664289e.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/00370d92f1b404768d34ac7dc664289e.svg#Sansation Regular V2")format("svg");
+}
+
+.pr-40 {
+    padding-right: 40px;
+}
+
+.active {
+    color: #3C4242;
+    font-weight: 700 !important;
+}
+
+.in-active {
+    color: #807D7E;
+}
+
+.title {
+    padding: 20px 0px 20px 100px;
+    font-size: 64px !important;
+}

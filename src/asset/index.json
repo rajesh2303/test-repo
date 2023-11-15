@@ -1,0 +1,19 @@
+{
+  "automotive": [
+    {
+      "image": "./automotive/benz.jpeg",
+      "alt": "benz",
+      "grid": 12
+    },
+    {
+      "image": "./automotive/img2.jpeg",
+      "alt": "benz",
+      "grid": 4
+    },
+    {
+      "image": "./automotive/img3.jpeg",
+      "alt": "benz",
+      "grid": 4
+    }
+  ]
+}
