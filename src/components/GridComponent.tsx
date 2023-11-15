@@ -4,13 +4,14 @@ import { Grid } from "@mui/material";
 import { DataProps } from "../interface";
 
 interface GridComponentProps {
+    title: string;
     data: DataProps[];
 }
 
-const GridComponent = ({ data }: GridComponentProps) => {
+const GridComponent = ({ title, data }: GridComponentProps) => {
     return (
         <>
-            <TitleComponent title="Automotive" />
+            <TitleComponent title={title} />
             <Box sx={{ padding: "0px 10px" }}>
                 <Grid container spacing={2} className="d-flex align-items-center">
                     {data.map((item, index) => (

@@ -105,7 +105,7 @@ const Data: DataProps[] = [
 const Automotive = () => {
     return (
         <>
-            <GridComponent data={Data} />
+            <GridComponent data={Data} title={"Automotive"} />
         </>
     );
 };
