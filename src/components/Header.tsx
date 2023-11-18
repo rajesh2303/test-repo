@@ -6,9 +6,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const HeaderList = [
     { name: "Automotive", url: RouterPath.automotive },
-    { name: "Portraits", url: RouterPath.portraits },
     { name: "Landscape", url: RouterPath.landscape },
-    { name: "Weddings", url: RouterPath.weddings },
+    { name: "Events", url: RouterPath.events },
+    { name: "Frames", url: RouterPath.frames },
 ];
 
 interface HeaderItemProps {
