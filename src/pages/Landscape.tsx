@@ -1,48 +1,28 @@
-import { DataProps } from "../interface";
 import GridComponent from "../components/GridComponent";
+import Grid from "@mui/material/Grid";
+import { useProvider } from "../context";
 
-const Data: DataProps[] = [
-    {
-        image: "",
-        alt: "",
-        grid: 1,
-    },
-    {
-        image: require("../asset/landscape/img1.jpeg"),
-        alt: "benz",
-        grid: 5,
-    },
-    {
-        image: require("../asset/landscape/img2.jpeg"),
-        alt: "benz",
-        grid: 5,
-    },
-    {
-        image: "",
-        alt: "",
-        grid: 1,
-    },
-    {
-        image: require("../asset/landscape/img3.jpeg"),
-        alt: "benz",
-        grid: 12,
-    },
-    {
-        image: "",
-        alt: "",
-        grid: 1,
-    },
-    {
-        image: require("../asset/landscape/img4.jpeg"),
-        alt: "benz",
-        grid: 5,
-    }
-];
+
 const Landscape = () => {
+    const { landscape } = useProvider();
+
     return (
         <>
-            <GridComponent data={Data} title={"Landscape"} />
+            <Grid container spacing={1} className="d-flex">
+                <Grid item xs={1}></Grid>
+                <Grid item xs={3.33}>
+                    <GridComponent data={landscape?.['rowOne'] ?? []} />
+                </Grid>
+                <Grid item xs={3.33}>
+                    <GridComponent data={landscape?.['rowTwo'] ?? []} />
+                </Grid>
+                <Grid item xs={3.33}>
+                    <GridComponent data={landscape?.['rowThree'] ?? []} />
+                </Grid>
+                <Grid item xs={1}></Grid>
+            </Grid>
         </>
+
     );
 };
 

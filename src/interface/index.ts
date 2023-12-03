@@ -5,4 +5,6 @@ export interface DataProps {
     name?: string;
     height?: string;
     width?: string;
+    isVideo?: boolean;
+    detailsValue?: string;
 }

@@ -4,7 +4,7 @@ import { RouterPath } from "./RouterPath";
 import Header from "../components/Header";
 import Landscape from "../pages/Landscape";
 import Events from "../pages/Events";
-import Frames from "../pages/Frames";
+import EventsDetails from "../pages/EventsDetails";
 
 const Router = () => {
     return (
@@ -14,7 +14,7 @@ const Router = () => {
                 <Route path={RouterPath.automotive} element={<Automotive />} />
                 <Route path={RouterPath.landscape} element={<Landscape />} />
                 <Route path={RouterPath.events} element={<Events />} />
-                <Route path={RouterPath.frames} element={<Frames />} />
+                <Route path={`${RouterPath.eventsDetails}/:id`} element={<EventsDetails />} />
             </Routes>
         </BrowserRouter>
     );

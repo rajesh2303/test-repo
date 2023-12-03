@@ -2,6 +2,7 @@ export const RouterPath = {
     automotive: '/',
     landscape: '/landscape',
     events: '/events',
-    frames: '/frames'
+    frames: '/frames',
+    eventsDetails: '/events-details'
 
 }

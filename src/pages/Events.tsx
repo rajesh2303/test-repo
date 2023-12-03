@@ -1,38 +1,36 @@
-import Box from "@mui/material/Box";
-import TitleComponent from "../components/TitleComponent";
 import Grid from "@mui/material/Grid";
-import { DataProps } from "../interface";
 import { Container, Typography } from "@mui/material";
+import { useCallback } from "react";
+import { useProvider } from "../context";
+import { useNavigate } from "react-router-dom";
+import { RouterPath } from "../router/RouterPath";
 
-const Data: DataProps[] = [
-    {
-        name: "Jaynika’s First Birthday",
-        image: require("../asset/events/img1.jpeg"),
-        alt: "benz",
-    },
-    {
-        name: "Shurthi’s Baby shower",
-        image: require("../asset/events/img2.jpeg"),
-        alt: "benz",
-    },
-    {
-        name: "Padmaja’s Baby Shower",
-        image: require("../asset/events/img3.jpeg"),
-        alt: "benz",
-    },
-    {
-        name: "Karthick & vinithav",
-        image: require("../asset/events/img4.jpeg"),
-        alt: "benz",
-    },
-];
 const Events = () => {
+
+    const { events } = useProvider();
+    const navigate = useNavigate();
+
+    const disableRightClick = useCallback(
+        (event: React.MouseEvent<HTMLImageElement>) => {
+            event.preventDefault();
+        },
+        []
+    );
+
+    const handleClick = useCallback((id: string) => {
+        navigate(`${RouterPath.eventsDetails}/${id}`)
+    }, [navigate]);
+
     return (
         <>
-            <TitleComponent title={"Events"} />
             <Container maxWidth="xl">
-                <Grid container spacing={3} columns={{ lg: 12, md: 12, xs: 4 }} className="d-flex align-items-center">
-                    {Data.map((item, index) => (
+                <Grid
+                    container
+                    spacing={3}
+                    columns={{ lg: 12, md: 12, xs: 4 }}
+                    className="d-flex align-items-center"
+                >
+                    {(events ?? [])?.map((item, index) => (
                         <Grid
                             key={index}
                             item
@@ -51,13 +49,16 @@ const Events = () => {
                                         height: item?.height,
                                     }}
                                     alt={item.alt}
+                                    draggable="false"
+                                    onContextMenu={disableRightClick}
+                                    onClick={() => handleClick(item?.detailsValue ?? "")}
                                 />
                             )}
                             <Typography
                                 sx={{
-                                    paddingTop: { lg: "27px", md: '20px', xs: '15px' },
+                                    paddingTop: { lg: "27px", md: "20px", xs: "15px" },
                                     fontFamily: "Rodest",
-                                    fontSize: { lg: "22px", md: '20px', xs: '15px' },
+                                    fontSize: { lg: "22px", md: "20px", xs: "15px" },
                                     fontWeight: 600,
                                 }}
                                 align="center"
