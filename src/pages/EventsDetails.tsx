@@ -1,7 +1,7 @@
 import Grid from "@mui/material/Grid";
 import GridComponent from "../components/GridComponent";
 import { useProvider } from "../context";
-import { useCallback, useMemo } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import TitleComponent from "../components/TitleComponent";
 import PreviewComponent from "../components/PreviewComponent";
@@ -26,6 +26,12 @@ const EventsDetails = () => {
         }
         return [];
     }, [eventsDetails, eventsId]);
+
+    useEffect(() => {
+        if (eventsDetails && eventsId && eventsDetails?.[eventsId] === undefined) {
+            navigate(RouterPath.events);
+        }
+    }, [eventsDetails, eventsId, navigate])
 
     const subtitle = useMemo(() => {
         if (events) {
