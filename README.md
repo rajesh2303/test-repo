@@ -44,3 +44,6 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Netlify
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ed1a0a4c-6bf6-41ad-af83-852b96092156/deploy-status)](https://app.netlify.com/sites/studiobee/deploys)
