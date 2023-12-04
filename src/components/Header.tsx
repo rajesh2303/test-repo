@@ -4,15 +4,17 @@ import { RouterPath } from "../router/RouterPath";
 import { useCallback, useMemo } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Grid from "@mui/material/Grid";
+import { Images } from "../asset";
 
 const HeaderList = [
     { name: "Automotive", url: RouterPath.automotive },
     { name: "Landscape", url: RouterPath.landscape },
-    { name: "Events", url: RouterPath.events }
+    { name: "Events", url: RouterPath.events },
+    { name: "Store", url: RouterPath.automotive, isInActive: true }
 ];
 
 interface HeaderItemProps {
-    data: { name: string; url: string };
+    data: { name: string; url: string, isInActive?: boolean };
 }
 
 const HeaderItem = ({ data }: HeaderItemProps) => {
@@ -28,13 +30,25 @@ const HeaderItem = ({ data }: HeaderItemProps) => {
     }, [location]);
 
     return (
-        <Typography
-            sx={{ cursor: "pointer" }}
-            className={`${data.url === activeTab ? "active" : "in-active"} pr-40`}
-            onClick={onClick}
-        >
-            {data.name}
-        </Typography>
+        <>
+            {
+                data?.isInActive ?
+                    <Typography
+                        className={"in-active pr-40"}
+                    >
+                        {data.name}
+                    </Typography>
+                    :
+                    <Typography
+                        sx={{ cursor: "pointer" }}
+                        className={`${data.url === activeTab ? "active" : "in-active"} pr-40`}
+                        onClick={onClick}
+                    >
+                        {data.name}
+                    </Typography>
+            }
+        </>
+
     );
 };
 
@@ -45,7 +59,7 @@ const Header = () => {
             sx={{
                 height: "80px",
                 borderBottom: "1px solid #BEBCBD",
-                marginBottom: "50px",
+                marginBottom: { lg: "50px", md: "50px", xs: "30px" },
                 backgroundColor: '#99e0a4'
             }}
         >
@@ -54,7 +68,7 @@ const Header = () => {
                     <Box style={{ paddingLeft: '100px' }} className="d-flex align-items-center">
                         <img
                             style={{ width: "190px" }}
-                            src={require("../asset/logo.jpg")}
+                            src={Images.logo}
                             alt=""
                         />
                     </Box>

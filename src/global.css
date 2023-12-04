@@ -1,11 +1,14 @@
 @font-face {
-    font-family: "Sansation Regular V2";
-    src: url("https://db.onlinewebfonts.com/t/00370d92f1b404768d34ac7dc664289e.eot");
-    src: url("https://db.onlinewebfonts.com/t/00370d92f1b404768d34ac7dc664289e.eot?#iefix")format("embedded-opentype"),
-        url("https://db.onlinewebfonts.com/t/00370d92f1b404768d34ac7dc664289e.woff2")format("woff2"),
-        url("https://db.onlinewebfonts.com/t/00370d92f1b404768d34ac7dc664289e.woff")format("woff"),
-        url("https://db.onlinewebfonts.com/t/00370d92f1b404768d34ac7dc664289e.ttf")format("truetype"),
-        url("https://db.onlinewebfonts.com/t/00370d92f1b404768d34ac7dc664289e.svg#Sansation Regular V2")format("svg");
+    font-family: "The Seasons Bold";
+    src: url('./fonts/Fontspring-DEMO-theseasons-bd.otf') format('opentype'),
+    url('./fonts/Fontspring-DEMO-theseasons-bdit.otf') format('opentype'),
+    url('./fonts/Fontspring-DEMO-theseasons-it.otf') format('opentype'),
+    url('./fonts/Fontspring-DEMO-theseasons-lt.otf') format('opentype'),
+    url('./fonts/Fontspring-DEMO-theseasons-ltit.otf') format('opentype'),
+    url('./fonts/Fontspring-DEMO-theseasons-reg.otf') format('opentype');
+
+
+
 }
 
 .pr-40 {
@@ -13,10 +16,16 @@
 }
 
 .active {
-    color: #3C4242;
+    color: #000;
     font-weight: 700 !important;
 }
 
 .in-active {
-    color: #807D7E;
+    color: #fff;
+}
+
+.next-prev {
+    font-family: 'The Seasons Bold' !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
 }

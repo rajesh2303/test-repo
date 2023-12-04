@@ -26,17 +26,15 @@ const Events = () => {
             <Container maxWidth="xl">
                 <Grid
                     container
-                    spacing={3}
-                    columns={{ lg: 12, md: 12, xs: 4 }}
+                    spacing={{ lg: 3, md: 3, xs: 2 }}
+                    columns={{ xs: 12 }}
                     className="d-flex align-items-center"
                 >
                     {(events ?? [])?.map((item, index) => (
                         <Grid
                             key={index}
                             item
-                            xs={12}
-                            md={6}
-                            lg={6}
+                            xs={6}
                             sx={{ width: "100%", height: "auto" }}
                         >
                             {item.image !== "" && (
@@ -51,19 +49,19 @@ const Events = () => {
                                     alt={item.alt}
                                     draggable="false"
                                     onContextMenu={disableRightClick}
-                                    onClick={() => handleClick(item?.detailsValue ?? "")}
+                                    onClick={() => handleClick(item?.detailsKey ?? "")}
                                 />
                             )}
                             <Typography
                                 sx={{
-                                    paddingTop: { lg: "27px", md: "20px", xs: "15px" },
+                                    paddingTop: { lg: "27px", md: "20px", xs: "12px" },
                                     fontFamily: "Rodest",
-                                    fontSize: { lg: "22px", md: "20px", xs: "15px" },
+                                    fontSize: { lg: "22px", md: "20px", xs: "12px" },
                                     fontWeight: 600,
                                 }}
                                 align="center"
                             >
-                                {item?.name}
+                                {item?.title}
                             </Typography>
                         </Grid>
                     ))}

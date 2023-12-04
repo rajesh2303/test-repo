@@ -9,11 +9,11 @@ const Automotive = () => {
 
     return (
         <Grid container spacing={0} className="d-flex">
-            <Grid item xs={1}></Grid>
-            <Grid item xs={10}>
+            <Grid item xs={0.5} lg={1} md={1}></Grid>
+            <Grid item xs={11} lg={10} md={10}>
                 <GridComponent data={automotive ?? []} />
             </Grid>
-            <Grid item xs={1}></Grid>
+            <Grid item xs={0.5} lg={1} md={1}></Grid>
         </Grid>
     );
 };
