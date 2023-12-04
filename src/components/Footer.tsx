@@ -52,7 +52,7 @@ const Footer = () => {
                             sx={{ color: "#fff", paddingBottom: "12px", fontWeight: 800 }}
                             className="d-flex justify-content-center footer-text"
                         >
-                            Copyright © 2023 godaddy Pvt Ltd. All rights reserved.
+                            Copyright ©2023 Studiobee. All rights reserved.
                         </Typography>
                     </Box>
                 </Grid>

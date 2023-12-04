@@ -61,7 +61,6 @@ const Header = () => {
             sx={{
                 height: "80px",
                 borderBottom: "1px solid #BEBCBD",
-                marginBottom: { lg: "50px", md: "50px", xs: "30px" },
                 backgroundColor: '#99e0a4'
             }}
         >

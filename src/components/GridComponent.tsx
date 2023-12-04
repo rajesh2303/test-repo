@@ -17,7 +17,7 @@ const GridComponent = ({ data }: GridComponentProps) => {
 
     return (
         <>
-            <Box sx={{ marginTop: "50px" }}>
+            <Box sx={{ marginTop: { lg: "50px", md: "50px", xs: "30px" } }}>
                 <Grid container spacing={{ xs: 1, md: 2, lg: 2 }} className="d-flex">
                     {data.map((item, index) => (
                         <Grid
@@ -47,7 +47,7 @@ const GridComponent = ({ data }: GridComponentProps) => {
                                                 maxWidth: "100%",
                                                 width: item?.width,
                                                 maxHeight: "100%",
-                                                height: item?.height,
+                                                height: "100%",
                                             }}
                                             alt={item.alt}
                                             onContextMenu={disableRightClick}
