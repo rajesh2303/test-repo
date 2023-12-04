@@ -4,6 +4,7 @@ import { RouterPath } from "../router/RouterPath";
 import { useCallback, useMemo } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Grid from "@mui/material/Grid";
+import Headroom from "react-headroom";
 import { Images } from "../asset";
 
 const HeaderList = [
@@ -18,16 +19,16 @@ interface HeaderItemProps {
 }
 
 const HeaderItem = ({ data }: HeaderItemProps) => {
-    const navigate = useNavigate();
-    const location = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-    const onClick = useCallback(() => {
-        navigate(data.url);
-    }, [data, navigate]);
+  const onClick = useCallback(() => {
+    navigate(data.url);
+  }, [data, navigate]);
 
-    const activeTab = useMemo(() => {
-        return location.pathname;
-    }, [location]);
+  const activeTab = useMemo(() => {
+    return location.pathname;
+  }, [location]);
 
     return (
         <>
@@ -54,6 +55,7 @@ const HeaderItem = ({ data }: HeaderItemProps) => {
 
 const Header = () => {
     return (
+      <Headroom>
         <Box
             className="d-flex justify-content-end align-items-center"
             sx={{
@@ -86,6 +88,7 @@ const Header = () => {
                 </Grid>
             </Grid>
         </Box>
+      </Headroom>
     );
 };
 

@@ -6,24 +6,26 @@ import { useNavigate } from "react-router-dom";
 import { RouterPath } from "../router/RouterPath";
 
 const Events = () => {
+  const { events } = useProvider();
+  const navigate = useNavigate();
 
-    const { events } = useProvider();
-    const navigate = useNavigate();
+  const disableRightClick = useCallback(
+    (event: React.MouseEvent<HTMLImageElement>) => {
+      event.preventDefault();
+    },
+    []
+  );
 
-    const disableRightClick = useCallback(
-        (event: React.MouseEvent<HTMLImageElement>) => {
-            event.preventDefault();
-        },
-        []
-    );
-
-    const handleClick = useCallback((id: string) => {
-        navigate(`${RouterPath.eventsDetails}/${id}`)
-    }, [navigate]);
+  const handleClick = useCallback(
+    (id: string) => {
+      navigate(`${RouterPath.eventsDetails}/${id}`);
+    },
+    [navigate]
+  );
 
     return (
         <>
-            <Container maxWidth="xl">
+            <Container maxWidth="xl" sx={{ marginTop: "50px" }}>
                 <Grid
                     container
                     spacing={{ lg: 3, md: 3, xs: 2 }}

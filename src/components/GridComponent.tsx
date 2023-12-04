@@ -17,7 +17,7 @@ const GridComponent = ({ data }: GridComponentProps) => {
 
     return (
         <>
-            <Box>
+            <Box sx={{ marginTop: "50px" }}>
                 <Grid container spacing={{ xs: 1, md: 2, lg: 2 }} className="d-flex">
                     {data.map((item, index) => (
                         <Grid
