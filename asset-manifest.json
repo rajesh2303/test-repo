@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/studiobee/static/css/main.803a0c41.css",
-    "main.js": "/studiobee/static/js/main.926101c1.js",
-    "static/js/787.7dbb0cd9.chunk.js": "/studiobee/static/js/787.7dbb0cd9.chunk.js",
-    "static/media/logo.jpg": "/studiobee/static/media/logo.90d1cc5f2ff9b043f45e.jpg",
-    "index.html": "/studiobee/index.html",
-    "main.803a0c41.css.map": "/studiobee/static/css/main.803a0c41.css.map",
-    "main.926101c1.js.map": "/studiobee/static/js/main.926101c1.js.map",
-    "787.7dbb0cd9.chunk.js.map": "/studiobee/static/js/787.7dbb0cd9.chunk.js.map"
+    "main.css": "/static/css/main.803a0c41.css",
+    "main.js": "/static/js/main.c6d69145.js",
+    "static/js/787.7dbb0cd9.chunk.js": "/static/js/787.7dbb0cd9.chunk.js",
+    "static/media/logo.jpg": "/static/media/logo.90d1cc5f2ff9b043f45e.jpg",
+    "index.html": "/index.html",
+    "main.803a0c41.css.map": "/static/css/main.803a0c41.css.map",
+    "main.c6d69145.js.map": "/static/js/main.c6d69145.js.map",
+    "787.7dbb0cd9.chunk.js.map": "/static/js/787.7dbb0cd9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.803a0c41.css",
-    "static/js/main.926101c1.js"
+    "static/js/main.c6d69145.js"
   ]
 }
