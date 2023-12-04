@@ -13,10 +13,16 @@
 }
 
 .active {
-    color: #3C4242;
+    color: #000;
     font-weight: 700 !important;
 }
 
 .in-active {
-    color: #807D7E;
+    color: #fff;
+}
+
+.next-prev {
+    font-family: 'Rodest' !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
 }

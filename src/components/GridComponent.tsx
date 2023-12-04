@@ -18,14 +18,14 @@ const GridComponent = ({ data }: GridComponentProps) => {
     return (
         <>
             <Box>
-                <Grid container spacing={2} className="d-flex">
+                <Grid container spacing={{ xs: 1, md: 2, lg: 2 }} className="d-flex">
                     {data.map((item, index) => (
                         <Grid
                             key={index}
                             item
                             xs={12}
                             lg={item.grid}
-                            sx={{ width: "100%", height: "auto", position: "relative" }}
+                            sx={{ width: "100%", position: "relative" }}
                         >
                             {item.isVideo ? (
                                 <>
@@ -59,7 +59,7 @@ const GridComponent = ({ data }: GridComponentProps) => {
                         </Grid>
                     ))}
                 </Grid>
-            </Box>
+            </Box >
         </>
     );
 };

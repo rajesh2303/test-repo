@@ -2,9 +2,11 @@ export interface DataProps {
     image: string;
     alt: string;
     grid?: number;
-    name?: string;
+    title?: string;
+    subTitle?: string;
     height?: string;
     width?: string;
     isVideo?: boolean;
-    detailsValue?: string;
+    detailsKey?: string;
+    column?: number
 }

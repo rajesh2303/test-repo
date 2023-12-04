@@ -1,6 +1,6 @@
-import axios from 'axios';
 import { ReactNode, createContext, useMemo, useContext, useCallback, useEffect, useState } from 'react';
 import { DataProps } from '../interface';
+import Data from '../asset/data.json'
 
 interface EventsDetails {
     [eventName: string]: DataProps[];
@@ -28,8 +28,7 @@ export const Provider = ({ children }: ProviderContextType) => {
 
     const fetchData = useCallback(async () => {
         try {
-            const response = await axios.get("https://studiobee.s3.ap-south-1.amazonaws.com/data.json");
-            const data = response?.data as ProviderType;
+            const data = Data as ProviderType;
             setEvents(data?.events ?? []);
             setEventsDetails(data?.eventsDetails);
             setAutomotive(data?.automotive);
