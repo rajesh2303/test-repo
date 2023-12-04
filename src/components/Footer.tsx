@@ -36,7 +36,7 @@ const Footer = () => {
                     >
                         <Box>
                             <img
-                                style={{ width: "281px" }}
+                                className="footer-width"
                                 src={Images.footerLogo}
                                 alt="studiobee"
                             />
@@ -50,7 +50,7 @@ const Footer = () => {
                     <Box>
                         <Typography
                             sx={{ color: "#fff", paddingBottom: "12px", fontWeight: 800 }}
-                            className="d-flex justify-content-center"
+                            className="d-flex justify-content-center footer-text"
                         >
                             Copyright © 2023 godaddy Pvt Ltd. All rights reserved.
                         </Typography>

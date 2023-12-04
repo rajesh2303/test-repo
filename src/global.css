@@ -6,9 +6,6 @@
     url('./fonts/Fontspring-DEMO-theseasons-lt.otf') format('opentype'),
     url('./fonts/Fontspring-DEMO-theseasons-ltit.otf') format('opentype'),
     url('./fonts/Fontspring-DEMO-theseasons-reg.otf') format('opentype');
-
-
-
 }
 
 .pr-40 {
@@ -28,4 +25,31 @@
     font-family: 'The Seasons Bold' !important;
     font-size: 22px !important;
     font-weight: 600 !important;
+}
+
+@media only screen and (max-width: 767px) {
+    .footer-width {
+        width: 150px;
+    }
+    .footer-text {
+        font-size: 12px !important;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .footer-width {
+        width: 170px;
+    }
+    .footer-text {
+        font-size: 14px !important;
+    }
+}
+  
+@media only screen and (min-width: 1025px) {
+    .footer-width {
+        width: 281px;
+    }
+    .footer-text {
+        font-size: 18px !important;
+    }
 }
