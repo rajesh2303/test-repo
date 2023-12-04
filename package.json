@@ -1,6 +1,7 @@
 {
   "name": "studiobee",
   "version": "1.0.1",
+  "homepage": "https://zenogenisys.github.io",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
