@@ -45,7 +45,7 @@ const GridComponent = ({ data }: GridComponentProps) => {
                                             maxWidth: "100%",
                                             width: item?.width,
                                             maxHeight: "100%",
-                                            height: "100%",
+                                            height: item?.height
                                         }}
                                         alt={item.alt}
                                         onContextMenu={disableRightClick}
