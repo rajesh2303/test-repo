@@ -70,7 +70,7 @@ const Header = () => {
                             <img
                                 style={{ width: "190px" }}
                                 src={Images.logo}
-                                alt=""
+                                alt="studiobee"
                             />
                         </Box>
                     </Grid>

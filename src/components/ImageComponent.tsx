@@ -3,11 +3,11 @@ import ImageListItem from "@mui/material/ImageListItem";
 import { DataProps } from "../interface";
 import CardMedia from "@mui/material/CardMedia";
 import { ScreenResolution, useResolution } from "../context/ResponsiveContext";
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 
 const srcset = (image: string, size: number, rows = 1, cols = 1) => {
     return {
-        src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
+        src: `${image}?fit=crop&auto=format`, // w=${size * cols}&h=${size * rows}&
         srcSet: `${image}?w=${size * cols}&h=${size * rows
             }&fit=crop&auto=format&dpr=2 2x`,
     };
@@ -31,6 +31,10 @@ const ImageComponent = ({ data, isMobileFullScreen }: ImageComponentProps) => {
             gap: 8
         }
     }, [screenResolution]);
+
+    const disableRightClick = useCallback((event: React.MouseEvent<HTMLImageElement>) => {
+        event.preventDefault();
+    }, []);
 
     return (
         <ImageList variant="quilted" cols={12} gap={gap}>
@@ -56,6 +60,8 @@ const ImageComponent = ({ data, isMobileFullScreen }: ImageComponentProps) => {
                             {...srcset(item.image, 121, item?.rows, item.grid)}
                             alt={item.alt}
                             loading="lazy"
+                            onContextMenu={disableRightClick}
+                            draggable="false"
                         />
                     )}
                 </ImageListItem>
