@@ -19,16 +19,16 @@ interface HeaderItemProps {
 }
 
 const HeaderItem = ({ data }: HeaderItemProps) => {
-  const navigate = useNavigate();
-  const location = useLocation();
+    const navigate = useNavigate();
+    const location = useLocation();
 
-  const onClick = useCallback(() => {
-    navigate(data.url);
-  }, [data, navigate]);
+    const onClick = useCallback(() => {
+        navigate(data.url);
+    }, [data, navigate]);
 
-  const activeTab = useMemo(() => {
-    return location.pathname;
-  }, [location]);
+    const activeTab = useMemo(() => {
+        return location.pathname;
+    }, [location]);
 
     return (
         <>
@@ -55,39 +55,39 @@ const HeaderItem = ({ data }: HeaderItemProps) => {
 
 const Header = () => {
     return (
-      <Headroom>
-        <Box
-            className="d-flex justify-content-end align-items-center"
-            sx={{
-                height: "80px",
-                borderBottom: "1px solid #BEBCBD",
-                backgroundColor: '#99e0a4'
-            }}
-        >
-            <Grid container spacing={0} className="d-flex align-items-center">
-                <Grid item xs={6}>
-                    <Box style={{ paddingLeft: '100px' }} className="d-flex align-items-center">
-                        <img
-                            style={{ width: "190px" }}
-                            src={Images.logo}
-                            alt=""
-                        />
-                    </Box>
-                </Grid>
-                <Grid item xs={6}>
-                    <Box
-                        className="d-flex justify-content-end align-items-center"
-                    >
-                        <Box className="d-flex align-items-center">
-                            {HeaderList.map((item) => (
-                                <HeaderItem key={item.name} data={item} />
-                            ))}
+        <Headroom>
+            <Box
+                className="d-flex justify-content-end align-items-center"
+                sx={{
+                    height: "80px",
+                    borderBottom: "1px solid #BEBCBD",
+                    backgroundColor: '#99e0a4'
+                }}
+            >
+                <Grid container spacing={0} className="d-flex align-items-center">
+                    <Grid item xs={6}>
+                        <Box style={{ paddingLeft: '100px' }} className="d-flex align-items-center">
+                            <img
+                                style={{ width: "190px" }}
+                                src={Images.logo}
+                                alt=""
+                            />
                         </Box>
-                    </Box>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Box
+                            className="d-flex justify-content-end align-items-center"
+                        >
+                            <Box className="d-flex align-items-center">
+                                {HeaderList.map((item) => (
+                                    <HeaderItem key={item.name} data={item} />
+                                ))}
+                            </Box>
+                        </Box>
+                    </Grid>
                 </Grid>
-            </Grid>
-        </Box>
-      </Headroom>
+            </Box>
+        </Headroom>
     );
 };
 

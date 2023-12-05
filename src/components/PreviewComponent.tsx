@@ -27,26 +27,26 @@ const PreviewComponent = ({ next, prev, handleNext, handlePrev }: PreviewCompone
             className="d-flex justify-content-between"
             style={{ marginTop: "100px" }}
         >
-            <Typography className="next-prev">
+            <Box>
                 {prev && (
-                    <Box sx={{ cursor: 'pointer' }} onClick={onClickPrev}>
+                    <Box sx={{ cursor: 'pointer', display: 'inline-flex', alignItems: 'center' }} onClick={onClickPrev}>
                         <ArrowBackIosNewIcon
-                            sx={{ fontSize: "30px", paddingRight: "10px" }}
+                            sx={{ fontSize: "30px", paddingRight: { lg: "10px", xs: "3px" } }}
                         />
-                        {prev?.title}
+                        <Typography sx={{ fontSize: { lg: '22px', xs: '12px' } }} className="next-prev">{prev?.title}</Typography>
                     </Box>
                 )}
-            </Typography>
-            <Typography className="next-prev">
+            </Box>
+            <Box>
                 {next && (
-                    <Box sx={{ cursor: 'pointer' }} onClick={onClickNext}>
-                        {next?.title}
+                    <Box sx={{ cursor: 'pointer', display: 'inline-flex', alignItems: 'center' }} onClick={onClickNext}>
+                        <Typography sx={{ fontSize: { lg: '22px', xs: '12px' } }} className="next-prev">{next?.title}</Typography>
                         <ArrowForwardIosIcon
-                            sx={{ fontSize: "30px", paddingLeft: "10px" }}
+                            sx={{ fontSize: "30px", paddingLeft: { lg: "10px", xs: "3px" } }}
                         />
                     </Box>
                 )}
-            </Typography>
+            </Box>
         </Box>
     );
 };
