@@ -1,5 +1,4 @@
 import Grid from "@mui/material/Grid";
-import GridComponent from "../components/GridComponent";
 import { useProvider } from "../context";
 import { useCallback, useEffect, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -7,6 +6,8 @@ import TitleComponent from "../components/TitleComponent";
 import PreviewComponent from "../components/PreviewComponent";
 import { DataProps } from "../interface";
 import { RouterPath } from "../router/RouterPath";
+import ImageComponent from "../components/ImageComponent";
+import Box from "@mui/material/Box";
 
 const EventsDetails = () => {
     const { eventsDetails, events } = useProvider();
@@ -84,12 +85,12 @@ const EventsDetails = () => {
     );
 
     return (
-        <>
+        <Box>
             <Grid container spacing={0} className="d-flex">
                 <Grid item xs={0.5} lg={1} md={1}></Grid>
                 <Grid item xs={11} lg={10} md={10}>
                     <TitleComponent title={subtitle} />
-                    <GridComponent data={eventsData} />
+                    <ImageComponent data={eventsData} />
                     <PreviewComponent
                         next={next}
                         prev={prev}
@@ -99,7 +100,7 @@ const EventsDetails = () => {
                 </Grid>
                 <Grid item xs={0.5} lg={1} md={1}></Grid>
             </Grid>
-        </>
+        </Box>
     );
 };
 

@@ -8,5 +8,7 @@ export interface DataProps {
     width?: string;
     isVideo?: boolean;
     detailsKey?: string;
-    column?: number
+    column?: number;
+    cols?: number;
+    rows?: number;
 }

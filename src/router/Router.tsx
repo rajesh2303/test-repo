@@ -7,18 +7,21 @@ import Events from "../pages/Events";
 import EventsDetails from "../pages/EventsDetails";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
+import Box from "@mui/material/Box";
 
 const Router = () => {
     return (
         <BrowserRouter>
             <Header />
             <ScrollToTop />
-            <Routes>
-                <Route path={RouterPath.automotive} element={<Automotive />} />
-                <Route path={RouterPath.landscape} element={<Landscape />} />
-                <Route path={RouterPath.events} element={<Events />} />
-                <Route path={`${RouterPath.eventsDetails}/:id`} element={<EventsDetails />} />
-            </Routes>
+            <Box sx={{ marginTop: { lg: "50px", md: "50px", xs: "30px" } }}>
+                <Routes>
+                    <Route path={RouterPath.automotive} element={<Automotive />} />
+                    <Route path={RouterPath.landscape} element={<Landscape />} />
+                    <Route path={RouterPath.events} element={<Events />} />
+                    <Route path={`${RouterPath.eventsDetails}/:id`} element={<EventsDetails />} />
+                </Routes>
+            </Box>
             <Footer />
         </BrowserRouter>
     );

@@ -1,4 +1,3 @@
-import Box from "@mui/material/Box";
 import { Grid } from "@mui/material";
 import { DataProps } from "../interface";
 import CardMedia from "@mui/material/CardMedia";
@@ -17,49 +16,47 @@ const GridComponent = ({ data }: GridComponentProps) => {
 
     return (
         <>
-            <Box sx={{ marginTop: { lg: "50px", md: "50px", xs: "30px" } }}>
-                <Grid container spacing={{ xs: 1, md: 2, lg: 2 }} className="d-flex">
-                    {data.map((item, index) => (
-                        <Grid
-                            key={index}
-                            item
-                            xs={12}
-                            lg={item.grid}
-                            sx={{ width: "100%", position: "relative" }}
-                        >
-                            {item.isVideo ? (
-                                <>
-                                    <CardMedia
-                                        autoPlay
-                                        muted
-                                        loop
-                                        controls
-                                        component="video"
+            <Grid container spacing={{ xs: 1, md: 2, lg: 2 }} className="d-flex">
+                {data.map((item, index) => (
+                    <Grid
+                        key={index}
+                        item
+                        xs={12}
+                        lg={item.grid}
+                        sx={{ width: "100%", position: "relative" }}
+                    >
+                        {item.isVideo ? (
+                            <>
+                                <CardMedia
+                                    autoPlay
+                                    muted
+                                    loop
+                                    controls
+                                    component="video"
+                                    src={item.image}
+                                />
+                            </>
+                        ) : (
+                            <>
+                                {item.image !== "" && (
+                                    <img
                                         src={item.image}
+                                        style={{
+                                            maxWidth: "100%",
+                                            width: item?.width,
+                                            maxHeight: "100%",
+                                            height: "100%",
+                                        }}
+                                        alt={item.alt}
+                                        onContextMenu={disableRightClick}
+                                        draggable="false"
                                     />
-                                </>
-                            ) : (
-                                <>
-                                    {item.image !== "" && (
-                                        <img
-                                            src={item.image}
-                                            style={{
-                                                maxWidth: "100%",
-                                                width: item?.width,
-                                                maxHeight: "100%",
-                                                height: "100%",
-                                            }}
-                                            alt={item.alt}
-                                            onContextMenu={disableRightClick}
-                                            draggable="false"
-                                        />
-                                    )}
-                                </>
-                            )}
-                        </Grid>
-                    ))}
-                </Grid>
-            </Box >
+                                )}
+                            </>
+                        )}
+                    </Grid>
+                ))}
+            </Grid>
         </>
     );
 };
