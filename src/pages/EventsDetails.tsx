@@ -84,13 +84,20 @@ const EventsDetails = () => {
         [navigate]
     );
 
+    const handleSlideShow = useCallback(
+        (index: number) => {
+            navigate(`${RouterPath.slideShow}/${eventsId}/${index}`);
+        },
+        [navigate, eventsId]
+    );
+
     return (
         <Box>
             <Grid container spacing={0} className="d-flex">
                 <Grid item xs={0.5} lg={1} md={1}></Grid>
                 <Grid item xs={11} lg={10} md={10}>
                     <TitleComponent title={subtitle} />
-                    <ImageComponent data={eventsData} />
+                    <ImageComponent data={eventsData} handleSlideShow={handleSlideShow} />
                     <PreviewComponent
                         next={next}
                         prev={prev}

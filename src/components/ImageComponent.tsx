@@ -15,10 +15,11 @@ const srcset = (image: string, size: number, rows = 1, cols = 1) => {
 
 interface ImageComponentProps {
     data: DataProps[];
-    isMobileFullScreen?: boolean
+    isMobileFullScreen?: boolean;
+    handleSlideShow?: (index: number) => void
 }
 
-const ImageComponent = ({ data, isMobileFullScreen }: ImageComponentProps) => {
+const ImageComponent = ({ data, isMobileFullScreen, handleSlideShow }: ImageComponentProps) => {
 
     const { screenResolution } = useResolution();
     const { gap } = useMemo(() => {
@@ -38,7 +39,7 @@ const ImageComponent = ({ data, isMobileFullScreen }: ImageComponentProps) => {
 
     return (
         <ImageList variant="quilted" cols={12} gap={gap}>
-            {data.map((item) => (
+            {data.map((item, index) => (
                 <ImageListItem
                     key={item.image}
                     cols={(isMobileFullScreen && screenResolution === ScreenResolution.xs) ? 12 : item?.grid}
@@ -62,6 +63,7 @@ const ImageComponent = ({ data, isMobileFullScreen }: ImageComponentProps) => {
                             loading="lazy"
                             onContextMenu={disableRightClick}
                             draggable="false"
+                            onClick={() => handleSlideShow?.(index)}
                         />
                     )}
                 </ImageListItem>
