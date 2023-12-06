@@ -6,24 +6,65 @@ import Landscape from "../pages/Landscape";
 import Events from "../pages/Events";
 import EventsDetails from "../pages/EventsDetails";
 import Footer from "../components/Footer";
-import ScrollToTop from "../components/ScrollToTop";
 import Box from "@mui/material/Box";
+import ImageSlideShow from "../pages/ImageSlideShow";
+import { ReactNode } from "react";
+
+interface HeaderFooterProps {
+    children: ReactNode;
+}
+
+const HeaderFooter = ({ children }: HeaderFooterProps) => {
+    return (
+        <>
+            <Header />
+            <Box sx={{ marginTop: { lg: "50px", md: "50px", xs: "30px" } }}>
+                {children}
+            </Box>
+            <Footer />
+        </>
+    );
+};
 
 const Router = () => {
     return (
         <BrowserRouter>
-            <Header />
-            <ScrollToTop />
-            <Box sx={{ marginTop: { lg: "50px", md: "50px", xs: "30px" } }}>
-                <Routes>
-                    <Route path={RouterPath.automotive} element={<Automotive />} />
-                    <Route path={RouterPath.landscape} element={<Landscape />} />
-                    <Route path={RouterPath.events} element={<Events />} />
-                    <Route path={`${RouterPath.eventsDetails}/:id`} element={<EventsDetails />} />
-                </Routes>
-            </Box>
-            <Footer />
-        </BrowserRouter>
+            <Routes>
+                <Route
+                    path={RouterPath.automotive}
+                    element={
+                        <HeaderFooter>
+                            <Automotive />
+                        </HeaderFooter>
+                    }
+                />
+                <Route
+                    path={RouterPath.landscape}
+                    element={
+                        <HeaderFooter>
+                            <Landscape />
+                        </HeaderFooter>
+                    }
+                />
+                <Route
+                    path={RouterPath.events}
+                    element={
+                        <HeaderFooter>
+                            <Events />
+                        </HeaderFooter>
+                    }
+                />
+                <Route
+                    path={`${RouterPath.eventsDetails}/:id`}
+                    element={
+                        <HeaderFooter>
+                            <EventsDetails />
+                        </HeaderFooter>
+                    }
+                />
+                <Route path={`${RouterPath.slideShow}/:type/:index`} element={<ImageSlideShow />} />
+            </Routes>
+        </BrowserRouter >
     );
 };
 

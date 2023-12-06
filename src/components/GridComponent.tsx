@@ -5,10 +5,11 @@ import { useCallback } from "react";
 
 interface GridComponentProps {
     data: DataProps[];
+    handleSlideShow?: (index: number) => void
 }
 
 
-const GridComponent = ({ data }: GridComponentProps) => {
+const GridComponent = ({ data, handleSlideShow }: GridComponentProps) => {
 
     const disableRightClick = useCallback((event: React.MouseEvent<HTMLImageElement>) => {
         event.preventDefault();
@@ -50,6 +51,7 @@ const GridComponent = ({ data }: GridComponentProps) => {
                                         alt={item.alt}
                                         onContextMenu={disableRightClick}
                                         draggable="false"
+                                        onClick={() => handleSlideShow?.(index)}
                                     />
                                 )}
                             </>
