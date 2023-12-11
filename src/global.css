@@ -1,13 +1,3 @@
-@font-face {
-    font-family: "The Seasons Bold";
-    src: url('./fonts/Fontspring-DEMO-theseasons-bd.otf') format('opentype'),
-    url('./fonts/Fontspring-DEMO-theseasons-bdit.otf') format('opentype'),
-    url('./fonts/Fontspring-DEMO-theseasons-it.otf') format('opentype'),
-    url('./fonts/Fontspring-DEMO-theseasons-lt.otf') format('opentype'),
-    url('./fonts/Fontspring-DEMO-theseasons-ltit.otf') format('opentype'),
-    url('./fonts/Fontspring-DEMO-theseasons-reg.otf') format('opentype');
-}
-
 .pr-40 {
     padding-right: 40px;
 }
@@ -22,7 +12,6 @@
 }
 
 .next-prev {
-    font-family: 'The Seasons Bold' !important;
     font-weight: 600 !important;
 }
 
@@ -30,6 +19,7 @@
     .footer-width {
         width: 150px;
     }
+
     .footer-text {
         font-size: 12px !important;
     }
@@ -39,15 +29,17 @@
     .footer-width {
         width: 170px;
     }
+
     .footer-text {
         font-size: 14px !important;
     }
 }
-  
+
 @media only screen and (min-width: 1025px) {
     .footer-width {
         width: 281px;
     }
+
     .footer-text {
         font-size: 18px !important;
     }

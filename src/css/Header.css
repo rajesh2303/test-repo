@@ -7,6 +7,30 @@
     align-items: center;
 }
 
+.menu-align {
+    display: flex !important;
+    align-items: center;
+    justify-content: end;
+    margin-right: 20px;
+}
+
+.menu-icon {
+    color: #fff;
+}
+
+.drawer-styles {
+    background-color: #99e0a4 !important;
+    padding: 20px 40px;
+}
+
+.desktop-hide {
+    display: none !important;
+}
+
+.mobile-hide {
+    display: block !important;
+}
+
 
 @media (max-width: 768px) {
     .logo-padding {
@@ -15,5 +39,9 @@
 
     .mobile-hide {
         display: none !important;
+    }
+
+    .desktop-hide {
+        display: block !important;
     }
 }

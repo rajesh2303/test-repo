@@ -1,3 +1,4 @@
+import React from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { RouterPath } from "../router/RouterPath";
@@ -7,6 +8,10 @@ import Grid from "@mui/material/Grid";
 import Headroom from "react-headroom";
 import { Images } from "../asset";
 import "../css/Header.css";
+import Drawer from "react-modern-drawer";
+import "react-modern-drawer/dist/index.css";
+import MenuIcon from "@mui/icons-material/Menu";
+import IconButton from "@mui/material/IconButton";
 
 const HeaderList = [
   { name: "Automotive", url: RouterPath.automotive },
@@ -48,9 +53,12 @@ const HeaderItem = ({ data }: HeaderItemProps) => {
   );
 };
 
-  
-
 const Header = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+
   return (
     <Headroom>
       <Box
@@ -73,13 +81,33 @@ const Header = () => {
           </Grid>
           <Grid item xs={6}>
             <Box className="d-flex justify-content-end align-items-center">
-              <Box className="mobile-hide align-center">
-                {HeaderList.map((item) => (
-                  <HeaderItem key={item.name} data={item} />
-                ))}
+              <Box className="mobile-hide">
+                <Box className="align-center">
+                  {HeaderList.map((item) => (
+                    <HeaderItem key={item.name} data={item} />
+                  ))}
+                </Box>
               </Box>
-              <Box>
-                
+            </Box>
+            <Box className="desktop-hide">
+              <Box className="menu-align">
+                <IconButton
+                  aria-label="menu"
+                  size="large"
+                  onClick={toggleDrawer}
+                >
+                  <MenuIcon className="menu-icon" />
+                </IconButton>
+                <Drawer
+                  open={isOpen}
+                  onClose={toggleDrawer}
+                  direction="right"
+                  className="bla bla bla drawer-styles"
+                >
+                  {HeaderList.map((item) => (
+                    <HeaderItem key={item.name} data={item} />
+                  ))}
+                </Drawer>
               </Box>
             </Box>
           </Grid>
