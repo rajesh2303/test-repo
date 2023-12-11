@@ -8,7 +8,7 @@ import Grid from "@mui/material/Grid";
 import Headroom from "react-headroom";
 import { Images } from "../asset";
 import "../css/Header.css";
-// import Drawer from "react-modern-drawer";
+import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
@@ -98,16 +98,16 @@ const Header = () => {
                 >
                   <MenuIcon className="menu-icon" />
                 </IconButton>
-                {/* <Drawer
+                <Drawer
                   open={isOpen}
                   onClose={toggleDrawer}
                   direction="right"
                   className="bla bla bla drawer-styles"
-                > */}
-                  {/* {HeaderList.map((item) => (
+                >
+                  {HeaderList.map((item) => (
                     <HeaderItem key={item.name} data={item} />
-                  ))} */}
-                {/* </Drawer> */}
+                  ))}
+                </Drawer>
               </Box>
             </Box>
           </Grid>
