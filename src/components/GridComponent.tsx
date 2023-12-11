@@ -46,7 +46,8 @@ const GridComponent = ({ data, handleSlideShow }: GridComponentProps) => {
                                             maxWidth: "100%",
                                             width: item?.width,
                                             maxHeight: "100%",
-                                            height: item?.height
+                                            height: item?.height,
+                                            cursor: "pointer"
                                         }}
                                         alt={item.alt}
                                         onContextMenu={disableRightClick}

@@ -1,0 +1,19 @@
+.logo-padding {
+    padding-left: 100px;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+
+@media (max-width: 768px) {
+    .logo-padding {
+        padding-left: 10px;
+    }
+
+    .mobile-hide {
+        display: none !important;
+    }
+}
